@@ -12,14 +12,14 @@
             <objects>
                 <viewController storyboardIdentifier="NewsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gIP-Om-Xbw" customClass="NewsViewController" customModule="RSSParser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dVU-Sz-p3I">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="2000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="980"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zv9-7n-jkf">
-                                <rect key="frame" x="-20" y="24" width="454" height="1962"/>
+                                <rect key="frame" x="-20" y="24" width="454" height="942"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XY4-GM-2WO">
-                                        <rect key="frame" x="20" y="20" width="414" height="1894.5"/>
+                                        <rect key="frame" x="20" y="0.0" width="414" height="900"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bEo-s7-8lD">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="310.5"/>
@@ -28,7 +28,7 @@
                                                 </constraints>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bgt-yX-cmL" userLabel="TextView">
-                                                <rect key="frame" x="0.0" y="310.5" width="414" height="1584"/>
+                                                <rect key="frame" x="0.0" y="310.5" width="414" height="589.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jUn-XW-1ao">
                                                         <rect key="frame" x="20" y="20" width="374" height="26.5"/>
@@ -55,7 +55,11 @@
                                             </view>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="1894.5" id="XlZ-Md-koa"/>
+                                            <constraint firstAttribute="trailing" secondItem="bEo-s7-8lD" secondAttribute="trailing" id="0kS-Sn-yev"/>
+                                            <constraint firstItem="bEo-s7-8lD" firstAttribute="leading" secondItem="XY4-GM-2WO" secondAttribute="leading" id="GIM-4X-nOh"/>
+                                            <constraint firstAttribute="height" constant="900" id="XlZ-Md-koa"/>
+                                            <constraint firstItem="bEo-s7-8lD" firstAttribute="top" secondItem="XY4-GM-2WO" secondAttribute="top" id="hE8-uH-Tuo"/>
+                                            <constraint firstItem="bEo-s7-8lD" firstAttribute="width" secondItem="XY4-GM-2WO" secondAttribute="width" id="ugP-uy-VZ7"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -64,7 +68,7 @@
                                     <constraint firstItem="XY4-GM-2WO" firstAttribute="centerX" secondItem="Zv9-7n-jkf" secondAttribute="centerX" id="5A3-pa-sfD"/>
                                     <constraint firstAttribute="bottom" secondItem="XY4-GM-2WO" secondAttribute="bottom" constant="47.5" id="DDg-Up-Of1"/>
                                     <constraint firstItem="XY4-GM-2WO" firstAttribute="leading" secondItem="Zv9-7n-jkf" secondAttribute="leading" constant="20" id="IE8-gy-9Ln"/>
-                                    <constraint firstItem="XY4-GM-2WO" firstAttribute="top" secondItem="Zv9-7n-jkf" secondAttribute="top" constant="20" id="Lc5-g7-m9X"/>
+                                    <constraint firstItem="XY4-GM-2WO" firstAttribute="top" secondItem="Zv9-7n-jkf" secondAttribute="top" id="Lc5-g7-m9X"/>
                                     <constraint firstAttribute="bottom" secondItem="XY4-GM-2WO" secondAttribute="bottom" constant="47.5" id="WAu-lN-Js8"/>
                                 </constraints>
                             </scrollView>
@@ -78,9 +82,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UHJ-wr-NGV"/>
                     </view>
-                    <size key="freeformSize" width="414" height="2000"/>
+                    <size key="freeformSize" width="414" height="980"/>
                     <connections>
                         <outlet property="imageView" destination="bEo-s7-8lD" id="gGL-i8-wFr"/>
+                        <outlet property="scrollView" destination="Zv9-7n-jkf" id="PWr-NU-gcq"/>
+                        <outlet property="stackView" destination="XY4-GM-2WO" id="h07-b9-Boc"/>
+                        <outlet property="stackViewHeightConstraint" destination="XlZ-Md-koa" id="Z0O-wJ-bNI"/>
                         <outlet property="textLabel" destination="otO-FD-ZaL" id="D10-9R-UGO"/>
                         <outlet property="titleLabel" destination="jUn-XW-1ao" id="SZV-RB-gR1"/>
                     </connections>

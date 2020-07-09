@@ -20,6 +20,10 @@ class NewsViewController: UIViewController {
     
     @IBOutlet var scrollView: UIScrollView!
     
+    @IBOutlet var stackView: UIStackView!
+    
+    @IBOutlet var stackViewHeightConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,10 +33,15 @@ class NewsViewController: UIViewController {
         
         titleLabel.text = news?.title
         titleLabel.numberOfLines = 0
+        titleLabel.sizeToFit()
+        
         textLabel.text = news?.fullText
         textLabel.numberOfLines = 0
+        textLabel.sizeToFit()
         
-        //scrollView.contentSize = CGSize(width: self.scrollView.frame.width, height: 2000)
+        
+        let constraintHeight = imageView.frame.height + titleLabel.frame.height + textLabel.frame.height
+        stackViewHeightConstraint.constant = constraintHeight
         
         guard let imageUrl = news?.enclosure?.first?.url else { imageView.isHidden = true
             return

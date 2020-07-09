@@ -62,22 +62,16 @@ class ProgressIndicator: UIView {
     }
     
     func  start(){
-        //check if view is already there or not..if again started
         if !self.subviews.contains(messageFrame){
-            
             activityIndicator.startAnimating()
             self.addSubview(messageFrame)
-            
         }
     }
     
     func stop(){
-        
         if self.subviews.contains(messageFrame){
-            
             activityIndicator.stopAnimating()
             messageFrame.removeFromSuperview()
-            
         }
     }
 }
