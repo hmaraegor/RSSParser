@@ -16,7 +16,7 @@ class NewsViewController: UIViewController {
     
     @IBOutlet var titleLabel: UILabel!
     
-    @IBOutlet var textView: UITextView!
+    @IBOutlet var textLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -27,8 +27,9 @@ class NewsViewController: UIViewController {
         }
         
         titleLabel.text = news?.title
-        textView.text = news?.fullText
         titleLabel.numberOfLines = 0
+        textLabel.text = news?.fullText
+        textLabel.numberOfLines = 0
         
         guard let imageUrl = news?.enclosure?.first?.url else { imageView.isHidden = true
             return

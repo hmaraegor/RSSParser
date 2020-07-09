@@ -109,6 +109,8 @@ class NewsFeedController: UITableViewController {
         indicator = ProgressIndicator(inview:self.view,loadingViewColor: UIColor.gray, indicatorColor: UIColor.white, msg: "Загрузка ленты")
         self.view.addSubview(indicator!)
         indicator!.start()
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        
         
         //example()
         
@@ -138,6 +140,7 @@ class NewsFeedController: UITableViewController {
             DispatchQueue.main.async {
                 //1//self.activityIndicatorView.stopAnimating()
                 self.indicator!.stop()
+                UIApplication.shared.endIgnoringInteractionEvents()
                 self.tableView.reloadData()
                 guard let refreshControl = refreshControl else { return }
                 refreshControl.endRefreshing()

@@ -47,7 +47,7 @@ class ProgressIndicator: UIView {
         activityIndicator.color = indicatorColor
         activityIndicator.hidesWhenStopped = true
         activityIndicator.frame = CGRect(x: self.bounds.origin.x + 6, y: 0, width: 20, height: 50)
-        print(activityIndicator.frame)
+        //print(activityIndicator.frame)
         let strLabel = UILabel(frame:CGRect(x: self.bounds.origin.x + 30, y: 0, width: self.bounds.width - (self.bounds.origin.x + 30) , height: 50))
         strLabel.text = loadingMessage
         strLabel.adjustsFontSizeToFitWidth = true
