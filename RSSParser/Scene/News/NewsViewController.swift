@@ -18,6 +18,7 @@ class NewsViewController: UIViewController {
     
     @IBOutlet var textLabel: UILabel!
     
+    @IBOutlet var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,8 @@ class NewsViewController: UIViewController {
         titleLabel.numberOfLines = 0
         textLabel.text = news?.fullText
         textLabel.numberOfLines = 0
+        
+        //scrollView.contentSize = CGSize(width: self.scrollView.frame.width, height: 2000)
         
         guard let imageUrl = news?.enclosure?.first?.url else { imageView.isHidden = true
             return
