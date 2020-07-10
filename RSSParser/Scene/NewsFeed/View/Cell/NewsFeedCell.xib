@@ -39,7 +39,7 @@
                     <constraint firstAttribute="trailing" secondItem="k3m-Ju-Z6p" secondAttribute="trailing" constant="16" id="zEA-hg-QFe"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="0.99020529269533453" green="0.97233365125639071" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.46970826466735782" green="0.68074145810316633" blue="1" alpha="0.062178938356164386" colorSpace="custom" customColorSpace="sRGB"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="dateLabel" destination="k3m-Ju-Z6p" id="J9U-LR-LqD"/>

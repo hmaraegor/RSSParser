@@ -54,7 +54,7 @@ class ProgressIndicator: UIView {
         strLabel.textColor = UIColor.white
         messageFrame.layer.cornerRadius = 15
         messageFrame.backgroundColor = loadingViewColor
-        messageFrame.alpha = 0.8
+        messageFrame.alpha = 1.0
         messageFrame.addSubview(activityIndicator)
         messageFrame.addSubview(strLabel)
         

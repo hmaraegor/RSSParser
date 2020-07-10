@@ -28,7 +28,7 @@ class NewsViewController: UIViewController {
         super.viewDidLoad()
         
         if let category = news?.category {
-            self.title = news?.category
+            self.title = "Категория: " + category
         }
         
         titleLabel.text = news?.title
@@ -39,13 +39,16 @@ class NewsViewController: UIViewController {
         textLabel.numberOfLines = 0
         textLabel.sizeToFit()
         
-        
-        let constraintHeight = imageView.frame.height + titleLabel.frame.height + textLabel.frame.height
+        let constraintHeight = titleLabel.frame.height + textLabel.frame.height + 40
         stackViewHeightConstraint.constant = constraintHeight
         
-        guard let imageUrl = news?.enclosure?.first?.url else { imageView.isHidden = true
+        guard let imageUrl = news?.enclosure?.first?.url else {
+            stackViewHeightConstraint.constant = constraintHeight
+            imageView.isHidden = true
             return
         }
+        
+        stackViewHeightConstraint.constant = constraintHeight + imageView.frame.height
         
         ImageDownloader.downloadImage(stringURL: imageUrl) { (imageData) in
             DispatchQueue.main.async {

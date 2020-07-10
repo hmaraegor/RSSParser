@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zv9-7n-jkf">
-                                <rect key="frame" x="-20" y="24" width="454" height="942"/>
+                                <rect key="frame" x="-20" y="-20" width="454" height="1020"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XY4-GM-2WO">
                                         <rect key="frame" x="20" y="0.0" width="414" height="900"/>
@@ -24,16 +24,20 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bEo-s7-8lD">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="310.5"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="310.5" id="qwH-Am-Of4"/>
+                                                    <constraint firstAttribute="width" secondItem="bEo-s7-8lD" secondAttribute="height" multiplier="200:150" id="IKL-Hf-GIq"/>
                                                 </constraints>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bgt-yX-cmL" userLabel="TextView">
                                                 <rect key="frame" x="0.0" y="310.5" width="414" height="589.5"/>
                                                 <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fgy-ux-SlB" userLabel="Title background">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="61.5"/>
+                                                        <color key="backgroundColor" red="0.93901060257176416" green="0.94231117210648807" blue="0.9522128807106599" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jUn-XW-1ao">
                                                         <rect key="frame" x="20" y="20" width="374" height="26.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                        <color key="textColor" red="0.0" green="0.040729083561954843" blue="0.4168186865482234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" red="0.15077728426395942" green="0.15077728426395942" blue="0.15077728426395942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otO-FD-ZaL">
@@ -48,9 +52,15 @@
                                                     <constraint firstItem="jUn-XW-1ao" firstAttribute="centerX" secondItem="Bgt-yX-cmL" secondAttribute="centerX" id="0u1-61-X9w"/>
                                                     <constraint firstItem="jUn-XW-1ao" firstAttribute="top" secondItem="Bgt-yX-cmL" secondAttribute="top" constant="20" id="6Bt-BW-UKp"/>
                                                     <constraint firstItem="jUn-XW-1ao" firstAttribute="leading" secondItem="Bgt-yX-cmL" secondAttribute="leading" constant="20" id="Fb1-5o-q6u"/>
+                                                    <constraint firstItem="fgy-ux-SlB" firstAttribute="top" secondItem="Bgt-yX-cmL" secondAttribute="top" id="GxY-m0-3fX"/>
+                                                    <constraint firstItem="fgy-ux-SlB" firstAttribute="leading" secondItem="Bgt-yX-cmL" secondAttribute="leading" id="HtT-KV-evc"/>
+                                                    <constraint firstAttribute="trailing" secondItem="fgy-ux-SlB" secondAttribute="trailing" id="PgV-DR-Ljd"/>
                                                     <constraint firstItem="otO-FD-ZaL" firstAttribute="leading" secondItem="Bgt-yX-cmL" secondAttribute="leading" constant="10" id="RjY-Ze-ruU"/>
+                                                    <constraint firstItem="fgy-ux-SlB" firstAttribute="width" secondItem="Bgt-yX-cmL" secondAttribute="width" id="b8F-jl-XJG"/>
                                                     <constraint firstItem="otO-FD-ZaL" firstAttribute="top" secondItem="jUn-XW-1ao" secondAttribute="bottom" constant="20" id="egR-2G-w5t"/>
+                                                    <constraint firstItem="otO-FD-ZaL" firstAttribute="top" secondItem="fgy-ux-SlB" secondAttribute="bottom" constant="5" id="iKg-2q-Eln"/>
                                                     <constraint firstItem="jUn-XW-1ao" firstAttribute="centerX" secondItem="otO-FD-ZaL" secondAttribute="centerX" id="jZ3-Ft-skl"/>
+                                                    <constraint firstItem="fgy-ux-SlB" firstAttribute="height" secondItem="jUn-XW-1ao" secondAttribute="height" constant="35" id="rJm-6Y-ELs"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -59,17 +69,18 @@
                                             <constraint firstItem="bEo-s7-8lD" firstAttribute="leading" secondItem="XY4-GM-2WO" secondAttribute="leading" id="GIM-4X-nOh"/>
                                             <constraint firstAttribute="height" constant="900" id="XlZ-Md-koa"/>
                                             <constraint firstItem="bEo-s7-8lD" firstAttribute="top" secondItem="XY4-GM-2WO" secondAttribute="top" id="hE8-uH-Tuo"/>
+                                            <constraint firstItem="Bgt-yX-cmL" firstAttribute="top" secondItem="bEo-s7-8lD" secondAttribute="bottom" id="ofM-8f-jSl"/>
                                             <constraint firstItem="bEo-s7-8lD" firstAttribute="width" secondItem="XY4-GM-2WO" secondAttribute="width" id="ugP-uy-VZ7"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="XY4-GM-2WO" secondAttribute="trailing" constant="20" id="1Xw-oW-o65"/>
+                                    <constraint firstAttribute="trailing" secondItem="XY4-GM-2WO" secondAttribute="trailing" id="1Xw-oW-o65"/>
                                     <constraint firstItem="XY4-GM-2WO" firstAttribute="centerX" secondItem="Zv9-7n-jkf" secondAttribute="centerX" id="5A3-pa-sfD"/>
-                                    <constraint firstAttribute="bottom" secondItem="XY4-GM-2WO" secondAttribute="bottom" constant="47.5" id="DDg-Up-Of1"/>
+                                    <constraint firstAttribute="bottom" secondItem="XY4-GM-2WO" secondAttribute="bottom" id="DDg-Up-Of1"/>
                                     <constraint firstItem="XY4-GM-2WO" firstAttribute="leading" secondItem="Zv9-7n-jkf" secondAttribute="leading" constant="20" id="IE8-gy-9Ln"/>
                                     <constraint firstItem="XY4-GM-2WO" firstAttribute="top" secondItem="Zv9-7n-jkf" secondAttribute="top" id="Lc5-g7-m9X"/>
-                                    <constraint firstAttribute="bottom" secondItem="XY4-GM-2WO" secondAttribute="bottom" constant="47.5" id="WAu-lN-Js8"/>
+                                    <constraint firstItem="XY4-GM-2WO" firstAttribute="width" secondItem="Zv9-7n-jkf" secondAttribute="width" multiplier="0.911894" id="iHz-Un-Via"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -78,6 +89,7 @@
                             <constraint firstItem="Zv9-7n-jkf" firstAttribute="top" secondItem="dVU-Sz-p3I" secondAttribute="topMargin" constant="-20" id="9zr-cn-UN4"/>
                             <constraint firstItem="Zv9-7n-jkf" firstAttribute="leading" secondItem="dVU-Sz-p3I" secondAttribute="leadingMargin" constant="-40" id="RO6-9Q-EqI"/>
                             <constraint firstAttribute="bottomMargin" secondItem="Zv9-7n-jkf" secondAttribute="bottom" constant="-20" id="a5S-Gi-oxx"/>
+                            <constraint firstItem="Zv9-7n-jkf" firstAttribute="width" secondItem="dVU-Sz-p3I" secondAttribute="width" multiplier="1.09662" id="hhf-Ne-QTu"/>
                             <constraint firstItem="Zv9-7n-jkf" firstAttribute="centerX" secondItem="dVU-Sz-p3I" secondAttribute="centerX" id="rCJ-aX-I1S"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UHJ-wr-NGV"/>
