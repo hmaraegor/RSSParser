@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Presenter {
+class PresentService {
     
     func presentNewsController(with theNews: News, completionHandler:
     @escaping (UIBarButtonItem, UIViewController) -> ()) {

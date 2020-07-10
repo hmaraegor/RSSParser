@@ -27,8 +27,10 @@ struct Constant {
         static let sourceWebSite = "vesti.ru"
     }
     
-    struct Indicator {
-        static let text = "Загрузка ленты"
+    struct IndicatorText {
+        static let progresIndicator = "Загрузка ленты"
+        static let RefreshControlKey = "Обновление ленты"
+        static let RefreshControlComment = "Потянуть для обновления"
     }
 
     struct Placeholder {

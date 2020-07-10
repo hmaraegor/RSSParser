@@ -17,7 +17,7 @@ class NewsFeedController: UITableViewController {
     private let searchController = UISearchController(searchResultsController: nil)
     private var myRefreshControl: UIRefreshControl = {
         let spinner = UIRefreshControl()
-        let title = NSLocalizedString("Обновление ленты", comment: "Потянуть для обновления")
+        let title = NSLocalizedString(Constant.IndicatorText.RefreshControlKey, comment: Constant.IndicatorText.RefreshControlComment)
         spinner.attributedTitle = NSAttributedString(string: title)
         spinner.addTarget(self, action: #selector(refresh), for: .valueChanged)
         return spinner
@@ -47,7 +47,7 @@ class NewsFeedController: UITableViewController {
         self.title = Constant.Title.sourceWebSite
         navigationController?.navigationBar.standardAppearance.titleTextAttributes = [.foregroundColor: Constant.Color.vcTitleGray]
         self.tableView.addSubview(myRefreshControl)
-        indicator = ProgressIndicator(inview:self.view,loadingViewColor: UIColor.gray, indicatorColor: UIColor.white, msg: Constant.Indicator.text)
+        indicator = ProgressIndicator(inview:self.view,loadingViewColor: UIColor.gray, indicatorColor: UIColor.white, msg: Constant.IndicatorText.progresIndicator)
         self.view.addSubview(indicator!)
         
         searchControllerSetup()
@@ -109,7 +109,7 @@ class NewsFeedController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? NewsFeedCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constant.IB.NewsFeedCell.cellID, for: indexPath) as? NewsFeedCell else {
             return UITableViewCell()
         }
         
@@ -134,7 +134,7 @@ class NewsFeedController: UITableViewController {
         else {
             notes = newsArray
         }
-        Presenter().presentNewsController(with: notes[indexPath.row]) { (backItem, vc) in
+        PresentService().presentNewsController(with: notes[indexPath.row]) { (backItem, vc) in
             self.navigationItem.backBarButtonItem = backItem
             self.navigationController?.pushViewController(vc, animated: true)
         }
