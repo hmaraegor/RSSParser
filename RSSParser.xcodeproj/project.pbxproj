@@ -71,7 +71,6 @@
 			isa = PBXGroup;
 			children = (
 				7409048A24B453FD008AAA9B /* RSSParser */,
-				740904C624B7677F008AAA9B /* Constants */,
 				7409048924B453FD008AAA9B /* Products */,
 				EBB209A5CE62BE85D958DC94 /* Pods */,
 				F11BFD5692CAE66D7228B5B3 /* Frameworks */,
@@ -91,6 +90,7 @@
 			children = (
 				7409048B24B453FD008AAA9B /* AppDelegate.swift */,
 				7409048D24B453FD008AAA9B /* SceneDelegate.swift */,
+				740904C624B7677F008AAA9B /* Constants */,
 				740904B624B615B0008AAA9B /* Services */,
 				740904A624B59C44008AAA9B /* Scene */,
 				740904A824B59CA4008AAA9B /* View */,

@@ -28,7 +28,8 @@ class NewsViewController: UIViewController {
         super.viewDidLoad()
         
         if let category = news?.category {
-            self.title = "Категория: " + category
+            self.title = Constant.Title.prefixCategory + category
+            navigationController?.navigationBar.standardAppearance.titleTextAttributes = [.foregroundColor: Constant.Color.vcTitleGray]
         }
         
         titleLabel.text = news?.title

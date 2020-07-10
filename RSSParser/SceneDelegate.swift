@@ -18,8 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         
-        let storyboard = UIStoryboard(name: "NewsFeed", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "NewsFeedVC")
+        let storyboard = UIStoryboard(name: Constant.IB.NewsFeed.storyboardName, bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: Constant.IB.NewsFeed.viewControllerID)
         
         window?.rootViewController = UINavigationController(rootViewController: vc)
         window?.makeKeyAndVisible()

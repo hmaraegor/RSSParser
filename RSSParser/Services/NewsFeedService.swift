@@ -13,7 +13,7 @@ class NewsFeedService {
     func gistListRequest(completionHandler:
     @escaping (RSS?, Error?) -> ()) {
         
-        let url = "https://www.vesti.ru/vesti.rss"
+        let url = Constant.URL.rssVestiRu
         
         NetworkService().getData(url: url) { (result: Result<RSS, NetworkErrorService>) in
             

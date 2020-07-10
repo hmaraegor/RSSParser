@@ -12,14 +12,12 @@ class Presenter {
     
     func presentNewsController(with theNews: News, completionHandler:
     @escaping (UIBarButtonItem, UIViewController) -> ()) {
-        let storyboard: UIStoryboard = UIStoryboard(name: "News", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "NewsVC")
+        let storyboard: UIStoryboard = UIStoryboard(name: Constant.IB.News.storyboardName, bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: Constant.IB.News.viewControllerID)
         (vc as? NewsViewController)?.news = theNews
         
         let backItem = UIBarButtonItem()
-        backItem.title = "Назад"
-//        navigationItem.backBarButtonItem = backItem
-//        navigationController?.pushViewController(vc, animated: true)
+        backItem.title = Constant.NavigationItem.backBarItem
         completionHandler(backItem, vc)
     }
     

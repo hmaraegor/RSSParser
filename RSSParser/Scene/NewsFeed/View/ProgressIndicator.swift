@@ -25,17 +25,16 @@ class ProgressIndicator: UIView {
         initalizeCustomIndicator()
         
     }
+    
     convenience init(inview:UIView) {
-        
         self.init(inview: inview,loadingViewColor: UIColor.brown,indicatorColor:UIColor.black, msg: "Loading..")
     }
+    
     convenience init(inview:UIView,messsage:String) {
-        
         self.init(inview: inview,loadingViewColor: UIColor.brown,indicatorColor:UIColor.black, msg: messsage)
     }
     
     required init?(coder aDecoder: NSCoder) {
-        
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -57,7 +56,6 @@ class ProgressIndicator: UIView {
         messageFrame.alpha = 1.0
         messageFrame.addSubview(activityIndicator)
         messageFrame.addSubview(strLabel)
-        
         
     }
     

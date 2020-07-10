@@ -24,7 +24,6 @@ class NewsFeedController: UITableViewController {
     }()
     private var newsReceived: Bool = false
     
-    
     private var searchBarIsEmpty: Bool {
         guard let text = searchController.searchBar.text else { return false }
         return text.isEmpty
@@ -41,15 +40,14 @@ class NewsFeedController: UITableViewController {
         super.viewDidLoad()
         
         self.extendedLayoutIncludesOpaqueBars = true
-        //self.navigationController!.navigationBar.isTranslucent = false
         
-        let nib = UINib(nibName: "NewsFeedCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "Cell")
+        let nib = UINib(nibName: Constant.IB.NewsFeedCell.xibName, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: Constant.IB.NewsFeedCell.cellID)
         
-        self.title = "vesti.ru"
-        navigationController?.navigationBar.standardAppearance.titleTextAttributes = [.foregroundColor: Constants.Color().vcTitle]
+        self.title = Constant.Title.sourceWebSite
+        navigationController?.navigationBar.standardAppearance.titleTextAttributes = [.foregroundColor: Constant.Color.vcTitleGray]
         self.tableView.addSubview(myRefreshControl)
-        indicator = ProgressIndicator(inview:self.view,loadingViewColor: UIColor.gray, indicatorColor: UIColor.white, msg: "Загрузка ленты")
+        indicator = ProgressIndicator(inview:self.view,loadingViewColor: UIColor.gray, indicatorColor: UIColor.white, msg: Constant.Indicator.text)
         self.view.addSubview(indicator!)
         
         searchControllerSetup()
@@ -72,8 +70,7 @@ class NewsFeedController: UITableViewController {
     
     private func searchControllerSetup() {
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Поиск по категориям"
-        searchController.searchBar.delegate = self
+        searchController.searchBar.placeholder = Constant.Placeholder.searchController
         searchController.searchResultsUpdater = self
         navigationItem.searchController = searchController
     }
@@ -91,10 +88,10 @@ class NewsFeedController: UITableViewController {
                 }
             }
             DispatchQueue.main.async {
-                self.unblockInput()
-                
-                self.newsReceived = true
-                
+                if !self.newsReceived {
+                    self.newsReceived = true
+                    self.unblockInput()
+                }
                 self.tableView.reloadData()
                 guard let refreshControl = refreshControl else { return }
                 refreshControl.endRefreshing()
@@ -149,18 +146,8 @@ class NewsFeedController: UITableViewController {
 extension NewsFeedController: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
-        //print("updateSearchResults: ", searchController.searchBar.text!)
         filterContentForSearchText(searchController.searchBar.text!)
         tableView.reloadData()
-    }
-    
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        print("SearchButtonClicked")
-    }
-
-    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
-        print("TextDidBeginEditing") //
-        print(self.searchController.searchBar.text)
     }
     
     private func filterContentForSearchText(_ searchText: String) {
@@ -170,17 +157,5 @@ extension NewsFeedController: UISearchResultsUpdating {
             }
             return false
         }
-    }
-
-}
-
-extension NewsFeedController: UISearchBarDelegate{
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print("searchBarSearchButtonClicked: ", searchController.searchBar.text!)
-        //searchRequest(term: searchController.searchBar.text!)
-    }
-
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        print("TextDidBeginEditing")
     }
 }
