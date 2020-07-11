@@ -26,6 +26,9 @@
 		740904C424B6590F008AAA9B /* ProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740904C324B6590F008AAA9B /* ProgressIndicator.swift */; };
 		740904C824B767BE008AAA9B /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740904C724B767BE008AAA9B /* AppConstants.swift */; };
 		740904CD24B7848E008AAA9B /* PresentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740904CC24B7848E008AAA9B /* PresentService.swift */; };
+		7454288424BA14080062A0D2 /* SearchResultsUpdating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7454288324BA14080062A0D2 /* SearchResultsUpdating.swift */; };
+		7454288624BA14A10062A0D2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7454288524BA14A10062A0D2 /* TableViewController.swift */; };
+		7454288824BA3F260062A0D2 /* MyRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7454288724BA3F260062A0D2 /* MyRefreshControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +56,9 @@
 		740904C324B6590F008AAA9B /* ProgressIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressIndicator.swift; sourceTree = "<group>"; };
 		740904C724B767BE008AAA9B /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		740904CC24B7848E008AAA9B /* PresentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentService.swift; sourceTree = "<group>"; };
+		7454288324BA14080062A0D2 /* SearchResultsUpdating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsUpdating.swift; sourceTree = "<group>"; };
+		7454288524BA14A10062A0D2 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		7454288724BA3F260062A0D2 /* MyRefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRefreshControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,13 +96,14 @@
 			children = (
 				7409048B24B453FD008AAA9B /* AppDelegate.swift */,
 				7409048D24B453FD008AAA9B /* SceneDelegate.swift */,
-				740904C624B7677F008AAA9B /* Constants */,
-				740904B624B615B0008AAA9B /* Services */,
 				740904A624B59C44008AAA9B /* Scene */,
 				740904A824B59CA4008AAA9B /* View */,
 				7409049424B45405008AAA9B /* Assets.xcassets */,
 				7409049924B45405008AAA9B /* Info.plist */,
 				740904A324B4C60A008AAA9B /* Model */,
+				740904B624B615B0008AAA9B /* Services */,
+				7454288224BA11590062A0D2 /* Extensions */,
+				740904C624B7677F008AAA9B /* Constants */,
 			);
 			path = RSSParser;
 			sourceTree = "<group>";
@@ -171,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				740904C324B6590F008AAA9B /* ProgressIndicator.swift */,
+				7454288724BA3F260062A0D2 /* MyRefreshControl.swift */,
 				740904B124B61024008AAA9B /* Cell */,
 			);
 			path = View;
@@ -182,6 +190,15 @@
 				740904C724B767BE008AAA9B /* AppConstants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		7454288224BA11590062A0D2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7454288324BA14080062A0D2 /* SearchResultsUpdating.swift */,
+				7454288524BA14A10062A0D2 /* TableViewController.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		EBB209A5CE62BE85D958DC94 /* Pods */ = {
@@ -322,6 +339,8 @@
 				740904A224B49163008AAA9B /* NewsFeedController.swift in Sources */,
 				740904B824B615DF008AAA9B /* ImageDownloader.swift in Sources */,
 				7409048C24B453FD008AAA9B /* AppDelegate.swift in Sources */,
+				7454288624BA14A10062A0D2 /* TableViewController.swift in Sources */,
+				7454288424BA14080062A0D2 /* SearchResultsUpdating.swift in Sources */,
 				740904CD24B7848E008AAA9B /* PresentService.swift in Sources */,
 				740904B024B60950008AAA9B /* NewsViewController.swift in Sources */,
 				740904BC24B61643008AAA9B /* NetworkErrorService.swift in Sources */,
@@ -330,6 +349,7 @@
 				740904A524B59515008AAA9B /* News.swift in Sources */,
 				740904C824B767BE008AAA9B /* AppConstants.swift in Sources */,
 				740904C024B616C0008AAA9B /* NewsFeedService.swift in Sources */,
+				7454288824BA3F260062A0D2 /* MyRefreshControl.swift in Sources */,
 				7409048E24B453FD008AAA9B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

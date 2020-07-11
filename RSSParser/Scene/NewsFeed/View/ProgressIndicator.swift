@@ -16,7 +16,7 @@ class ProgressIndicator: UIView {
     var messageFrame = UIView()
     var activityIndicator = UIActivityIndicatorView()
     
-    init(inview:UIView,loadingViewColor:UIColor,indicatorColor:UIColor,msg:String){
+    init(inview:UIView, loadingViewColor:UIColor, indicatorColor:UIColor, msg:String){
         
         self.indicatorColor = indicatorColor
         self.loadingViewColor = loadingViewColor
@@ -27,11 +27,11 @@ class ProgressIndicator: UIView {
     }
     
     convenience init(inview:UIView) {
-        self.init(inview: inview,loadingViewColor: UIColor.brown,indicatorColor:UIColor.black, msg: "Loading..")
+        self.init(inview: inview, loadingViewColor: UIColor.gray, indicatorColor: UIColor.white, msg: Constant.IndicatorText.progresIndicator)
     }
     
     convenience init(inview:UIView,messsage:String) {
-        self.init(inview: inview,loadingViewColor: UIColor.brown,indicatorColor:UIColor.black, msg: messsage)
+        self.init(inview: inview, loadingViewColor: UIColor.brown, indicatorColor:UIColor.black, msg: messsage)
     }
     
     required init?(coder aDecoder: NSCoder) {
