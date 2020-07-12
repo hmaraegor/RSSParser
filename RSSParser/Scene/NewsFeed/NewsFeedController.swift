@@ -10,26 +10,18 @@ import UIKit
 
 class NewsFeedController: UITableViewController {
     
-    var newsArray: [News] = []
-    var filteredNews: [News] = []
-    var isFiltiring: Bool {
-        return searchController.isActive && !searchBarIsEmpty
-    }
-    private var rss: RSS?
-    private var indicator: ProgressIndicator?
-    private let searchController = UISearchController(searchResultsController: nil)
-
-    private var newsReceived: Bool = false
+    @IBOutlet var dataProvider: DataProvider!
     
-    private var searchBarIsEmpty: Bool {
-        guard let text = searchController.searchBar.text else { return false }
-        return text.isEmpty
-    }
+    
+    private var indicator: ProgressIndicator?
+    private var newsReceived: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var myRefreshControl = MyRefreshControl(function: fetchNewsFeed)
+        dataProvider.vc = self
+        
+        let myRefreshControl = MyRefreshControl(function: fetchNewsFeed)
         self.tableView.addSubview(myRefreshControl)
         
         self.extendedLayoutIncludesOpaqueBars = true
@@ -39,9 +31,6 @@ class NewsFeedController: UITableViewController {
         
         self.title = Constant.Title.sourceWebSite
         navigationController?.navigationBar.standardAppearance.titleTextAttributes = [.foregroundColor: Constant.Color.vcTitleGray]
-        
-        
-        
         indicator = ProgressIndicator(inview: self.view)
         self.view.addSubview(indicator!)
         
@@ -52,30 +41,25 @@ class NewsFeedController: UITableViewController {
     }
     
     func blockInput(){
-        searchController.searchBar.isUserInteractionEnabled = false
+        dataProvider.dataManager.searchController.searchBar.isUserInteractionEnabled = false
         self.view.isUserInteractionEnabled = false
         indicator!.start()
     }
     
     func unblockInput(){
-        self.indicator!.stop()
+        indicator!.stop()
         self.view.isUserInteractionEnabled = true
-        self.searchController.searchBar.isUserInteractionEnabled = true
+        dataProvider.dataManager.searchController.searchBar.isUserInteractionEnabled = true
     }
 
-    private func searchControllerSetup() {
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = Constant.Placeholder.searchController
-        searchController.searchResultsUpdater = self
-        navigationItem.searchController = searchController
-    }
+
     
      func fetchNewsFeed(refreshControl: UIRefreshControl? = nil){
         
         NewsFeedService().gistListRequest() { (array, error) in
             if array != nil {
-                self.rss = array!
-                self.newsArray = self.rss?.channel.item ?? []
+                self.dataProvider.dataManager.addRss(array: array!)
+                self.dataProvider.dataManager.addNewsArray()
             }
             else if error != nil {
                 DispatchQueue.main.async {

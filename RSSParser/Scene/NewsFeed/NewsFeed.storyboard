@@ -25,13 +25,17 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="hdm-F8-47f" id="6dT-YV-HvF"/>
-                            <outlet property="delegate" destination="hdm-F8-47f" id="RVG-At-Z3d"/>
+                            <outlet property="dataSource" destination="Jjx-6s-RZQ" id="Swc-VG-fWE"/>
+                            <outlet property="delegate" destination="Jjx-6s-RZQ" id="WWp-87-CeQ"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Njt-es-WZa"/>
+                    <connections>
+                        <outlet property="dataProvider" destination="Jjx-6s-RZQ" id="yin-am-oYI"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lci-Sj-8p2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <customObject id="Jjx-6s-RZQ" customClass="DataProvider" customModule="RSSParser" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="834.78260869565224" y="28.794642857142854"/>
         </scene>
