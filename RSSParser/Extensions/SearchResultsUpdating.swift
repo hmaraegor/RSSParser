@@ -16,7 +16,7 @@ extension NewsFeedController: UISearchResultsUpdating {
     }
     
     private func filterContentForSearchText(_ searchText: String) {
-        filteredNews = newsArray.filter() { (news: News) -> Bool in
+        dataProvider.dataManager.filteredNews = dataProvider.dataManager.newsArray.filter() { (news: News) -> Bool in
             if news.category != nil {
                 return (news.category!.lowercased().contains(searchText.lowercased()))
             }

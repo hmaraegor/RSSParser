@@ -27,8 +27,9 @@
 		740904C824B767BE008AAA9B /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740904C724B767BE008AAA9B /* AppConstants.swift */; };
 		740904CD24B7848E008AAA9B /* PresentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740904CC24B7848E008AAA9B /* PresentService.swift */; };
 		7454288424BA14080062A0D2 /* SearchResultsUpdating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7454288324BA14080062A0D2 /* SearchResultsUpdating.swift */; };
-		7454288624BA14A10062A0D2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7454288524BA14A10062A0D2 /* TableViewController.swift */; };
 		7454288824BA3F260062A0D2 /* MyRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7454288724BA3F260062A0D2 /* MyRefreshControl.swift */; };
+		7454288A24BB35580062A0D2 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7454288924BB35580062A0D2 /* DataProvider.swift */; };
+		7454288C24BB36A50062A0D2 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7454288B24BB36A50062A0D2 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,8 +58,9 @@
 		740904C724B767BE008AAA9B /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		740904CC24B7848E008AAA9B /* PresentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentService.swift; sourceTree = "<group>"; };
 		7454288324BA14080062A0D2 /* SearchResultsUpdating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsUpdating.swift; sourceTree = "<group>"; };
-		7454288524BA14A10062A0D2 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		7454288724BA3F260062A0D2 /* MyRefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRefreshControl.swift; sourceTree = "<group>"; };
+		7454288924BB35580062A0D2 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		7454288B24BB36A50062A0D2 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,8 @@
 				740904C524B76274008AAA9B /* View */,
 				7409049F24B48919008AAA9B /* NewsFeed.storyboard */,
 				740904A124B49163008AAA9B /* NewsFeedController.swift */,
+				7454288924BB35580062A0D2 /* DataProvider.swift */,
+				7454288B24BB36A50062A0D2 /* DataManager.swift */,
 			);
 			path = NewsFeed;
 			sourceTree = "<group>";
@@ -196,7 +200,6 @@
 			isa = PBXGroup;
 			children = (
 				7454288324BA14080062A0D2 /* SearchResultsUpdating.swift */,
-				7454288524BA14A10062A0D2 /* TableViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -339,7 +342,7 @@
 				740904A224B49163008AAA9B /* NewsFeedController.swift in Sources */,
 				740904B824B615DF008AAA9B /* ImageDownloader.swift in Sources */,
 				7409048C24B453FD008AAA9B /* AppDelegate.swift in Sources */,
-				7454288624BA14A10062A0D2 /* TableViewController.swift in Sources */,
+				7454288A24BB35580062A0D2 /* DataProvider.swift in Sources */,
 				7454288424BA14080062A0D2 /* SearchResultsUpdating.swift in Sources */,
 				740904CD24B7848E008AAA9B /* PresentService.swift in Sources */,
 				740904B024B60950008AAA9B /* NewsViewController.swift in Sources */,
@@ -347,6 +350,7 @@
 				740904B424B61094008AAA9B /* NewsFeedCell.swift in Sources */,
 				740904BA24B6161D008AAA9B /* ErrorAlertService.swift in Sources */,
 				740904A524B59515008AAA9B /* News.swift in Sources */,
+				7454288C24BB36A50062A0D2 /* DataManager.swift in Sources */,
 				740904C824B767BE008AAA9B /* AppConstants.swift in Sources */,
 				740904C024B616C0008AAA9B /* NewsFeedService.swift in Sources */,
 				7454288824BA3F260062A0D2 /* MyRefreshControl.swift in Sources */,
