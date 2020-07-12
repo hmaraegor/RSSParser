@@ -23,13 +23,12 @@ class DataProvider: NSObject {
     
 }
 
+// MARK: - Table view data source
+
 extension DataProvider: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if dataManager.isFiltiring {
-            return dataManager.filteredNews.count
-        }
-        return dataManager.newsArray.count
+        return dataManager.getNewsCount()
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -37,14 +36,7 @@ extension DataProvider: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        let news: News
-        if dataManager.isFiltiring {
-            news = dataManager.filteredNews[indexPath.row]
-        }
-        else {
-            news = dataManager.newsArray[indexPath.row]
-        }
-        
+        let news = dataManager.getNews(for: indexPath.row)
         cell.configure(with: news)
         
         return cell
@@ -52,18 +44,13 @@ extension DataProvider: UITableViewDataSource {
     
 }
 
+// MARK: - Table view delegate
+
 extension DataProvider: UITableViewDelegate {
  
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let notes: [News]
-        if dataManager.isFiltiring {
-            notes = dataManager.filteredNews
-        }
-        else {
-            notes = dataManager.newsArray
-        }
+        let notes = dataManager.getFeed()
         PresentService().presentNewsController(with: notes[indexPath.row]) { (backItem, vc) in
-            
             self.vc.navigationItem.backBarButtonItem = backItem
             self.vc.navigationController?.pushViewController(vc, animated: true)
         }

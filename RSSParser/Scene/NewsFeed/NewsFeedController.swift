@@ -12,7 +12,7 @@ class NewsFeedController: UITableViewController {
     
     @IBOutlet var dataProvider: DataProvider!
     
-    private var rss: RSS?
+    
     private var indicator: ProgressIndicator?
     private var newsReceived: Bool = false
 
@@ -38,8 +38,6 @@ class NewsFeedController: UITableViewController {
         blockInput()
         
         fetchNewsFeed()
-        
-        
     }
     
     func blockInput(){
@@ -49,24 +47,19 @@ class NewsFeedController: UITableViewController {
     }
     
     func unblockInput(){
-        self.indicator!.stop()
+        indicator!.stop()
         self.view.isUserInteractionEnabled = true
-        self.dataProvider.dataManager.searchController.searchBar.isUserInteractionEnabled = true
+        dataProvider.dataManager.searchController.searchBar.isUserInteractionEnabled = true
     }
 
-    private func searchControllerSetup() {
-        dataProvider.dataManager.searchController.obscuresBackgroundDuringPresentation = false
-        dataProvider.dataManager.searchController.searchBar.placeholder = Constant.Placeholder.searchController
-        dataProvider.dataManager.searchController.searchResultsUpdater = self
-        navigationItem.searchController = dataProvider.dataManager.searchController
-    }
+
     
      func fetchNewsFeed(refreshControl: UIRefreshControl? = nil){
         
         NewsFeedService().gistListRequest() { (array, error) in
             if array != nil {
-                self.rss = array!
-                self.dataProvider.dataManager.newsArray = self.rss?.channel.item ?? []
+                self.dataProvider.dataManager.addRss(array: array!)
+                self.dataProvider.dataManager.addNewsArray()
             }
             else if error != nil {
                 DispatchQueue.main.async {

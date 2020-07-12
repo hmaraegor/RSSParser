@@ -104,7 +104,6 @@
 				7409049924B45405008AAA9B /* Info.plist */,
 				740904A324B4C60A008AAA9B /* Model */,
 				740904B624B615B0008AAA9B /* Services */,
-				7454288224BA11590062A0D2 /* Extensions */,
 				740904C624B7677F008AAA9B /* Constants */,
 			);
 			path = RSSParser;
@@ -130,6 +129,7 @@
 		740904A724B59C5A008AAA9B /* NewsFeed */ = {
 			isa = PBXGroup;
 			children = (
+				7454288224BA11590062A0D2 /* Extensions */,
 				740904C524B76274008AAA9B /* View */,
 				7409049F24B48919008AAA9B /* NewsFeed.storyboard */,
 				740904A124B49163008AAA9B /* NewsFeedController.swift */,
