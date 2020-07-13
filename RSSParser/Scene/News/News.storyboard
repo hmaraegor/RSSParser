@@ -73,14 +73,20 @@
                                             <constraint firstItem="bEo-s7-8lD" firstAttribute="width" secondItem="XY4-GM-2WO" secondAttribute="width" id="ugP-uy-VZ7"/>
                                         </constraints>
                                     </stackView>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="lo5-1i-g48">
+                                        <rect key="frame" x="20" y="0.0" width="414" height="310.5"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="lo5-1i-g48" firstAttribute="bottom" secondItem="bEo-s7-8lD" secondAttribute="bottom" id="18x-A9-Pr2"/>
                                     <constraint firstAttribute="trailing" secondItem="XY4-GM-2WO" secondAttribute="trailing" id="1Xw-oW-o65"/>
-                                    <constraint firstItem="XY4-GM-2WO" firstAttribute="centerX" secondItem="Zv9-7n-jkf" secondAttribute="centerX" id="5A3-pa-sfD"/>
                                     <constraint firstAttribute="bottom" secondItem="XY4-GM-2WO" secondAttribute="bottom" id="DDg-Up-Of1"/>
                                     <constraint firstItem="XY4-GM-2WO" firstAttribute="leading" secondItem="Zv9-7n-jkf" secondAttribute="leading" constant="20" id="IE8-gy-9Ln"/>
+                                    <constraint firstItem="lo5-1i-g48" firstAttribute="trailing" secondItem="bEo-s7-8lD" secondAttribute="trailing" id="LKj-mM-cUQ"/>
                                     <constraint firstItem="XY4-GM-2WO" firstAttribute="top" secondItem="Zv9-7n-jkf" secondAttribute="top" id="Lc5-g7-m9X"/>
                                     <constraint firstItem="XY4-GM-2WO" firstAttribute="width" secondItem="Zv9-7n-jkf" secondAttribute="width" multiplier="0.911894" id="iHz-Un-Via"/>
+                                    <constraint firstItem="lo5-1i-g48" firstAttribute="top" secondItem="bEo-s7-8lD" secondAttribute="top" id="inj-6s-sKE"/>
+                                    <constraint firstItem="lo5-1i-g48" firstAttribute="leading" secondItem="bEo-s7-8lD" secondAttribute="leading" id="xXp-3h-rRZ"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -90,12 +96,12 @@
                             <constraint firstItem="Zv9-7n-jkf" firstAttribute="leading" secondItem="dVU-Sz-p3I" secondAttribute="leadingMargin" constant="-40" id="RO6-9Q-EqI"/>
                             <constraint firstAttribute="bottomMargin" secondItem="Zv9-7n-jkf" secondAttribute="bottom" constant="-20" id="a5S-Gi-oxx"/>
                             <constraint firstItem="Zv9-7n-jkf" firstAttribute="width" secondItem="dVU-Sz-p3I" secondAttribute="width" multiplier="1.09662" id="hhf-Ne-QTu"/>
-                            <constraint firstItem="Zv9-7n-jkf" firstAttribute="centerX" secondItem="dVU-Sz-p3I" secondAttribute="centerX" id="rCJ-aX-I1S"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UHJ-wr-NGV"/>
                     </view>
                     <size key="freeformSize" width="414" height="980"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="lo5-1i-g48" id="1V4-cK-buH"/>
                         <outlet property="imageView" destination="bEo-s7-8lD" id="gGL-i8-wFr"/>
                         <outlet property="scrollView" destination="Zv9-7n-jkf" id="PWr-NU-gcq"/>
                         <outlet property="stackView" destination="XY4-GM-2WO" id="h07-b9-Boc"/>
@@ -106,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dnq-G2-gW3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="89.855072463768124" y="90.401785714285708"/>
+            <point key="canvasLocation" x="88.125" y="89.788732394366193"/>
         </scene>
     </scenes>
 </document>

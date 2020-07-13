@@ -12,6 +12,8 @@ class NewsViewController: UIViewController {
 
     var news: News?
     
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    
     @IBOutlet var imageView: UIImageView!
     
     @IBOutlet var titleLabel: UILabel!
@@ -26,6 +28,7 @@ class NewsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator.hidesWhenStopped = true
         
         if let category = news?.category {
             self.title = Constant.Title.prefixCategory + category
@@ -49,10 +52,12 @@ class NewsViewController: UIViewController {
             return
         }
         
+        activityIndicator.startAnimating()
         stackViewHeightConstraint.constant = constraintHeight + imageView.frame.height
         
         ImageDownloader.downloadImage(stringURL: imageUrl) { (imageData) in
             DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
                 self.imageView.image = UIImage(data: imageData)
             }
         }
